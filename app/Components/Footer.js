@@ -3,8 +3,8 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <div className="container">
-        <p>GodsChess 2023, Fabrice et Jean-Jacques Valmont. Tous droits réservés.</p>
+      <div className="bg-black container text-center">
+        <p className="text-white">GodsChess 2023, Fabrice et Jean-Jacques Valmont. Tous droits réservés.</p>
       </div>
     </footer>
   );
