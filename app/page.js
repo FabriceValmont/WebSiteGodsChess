@@ -12,8 +12,8 @@ export default function Home() {
     <div>
       <Header />
       <main className="flex flex-col items-center">
-        <SectionHomePagePlay src="/Fond_site_web1.png" alt="Description de l'image" width={2000} height={500} />
-        <SectionHomePageMode src="/GameBoardScreen.png" alt="Description de l'image" width={2000} height={500}/>
+        <SectionHomePagePlay src="/Fond_site_web.png" alt="Description de l'image" width={2000} height={500} />
+        <SectionHomePageMode src="/GameBoardScreenWeb.png" alt="Description de l'image" width={2000} height={500}/>
         <SectionHomePageGods src="/Panorama_des_Dieux_IA.png" alt="Description de l'image" width={2000} height={500}/>
         <SectionHomePageContact src="/Porte_GodsChess.png" alt="Description de l'image" width={2000} height={500}/>
       </main> 
