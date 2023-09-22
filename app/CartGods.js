@@ -1,7 +1,6 @@
 import React from "react";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
-import SectionHomePage from "./Components/SectionHomePage";
 import CardGod from "./Components/CardGod";
 import data from "../data"
 
