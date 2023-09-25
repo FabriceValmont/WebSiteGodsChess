@@ -10,10 +10,18 @@ const SectionHomePage = () => {
         <button className="text-black">Voir gameplay</button>
         <p>Faction</p>
       </div>
-      <div className=" w-full h-screen text-2xl text-white flex justify-around items-center mx-auto">
-        <p>Paragraphe pour le mode clan</p>
-        <p className="text-black">Vidéo</p>
-        <p>Paragraphe pour le mode faction</p>
+      <div className=" w-full h-screen text-3xl text-white flex justify-around items-center mx-auto">
+        <div className=" flex flex-col text-center mx-auto">
+        <p className="whitespace-normal">Deux Dieux </p>
+        <p className="whitespace-normal">Deux pouvoirs unique  </p>
+        <p className="whitespace-normal px-16">Pour une bataille tactique épique </p>
+        </div>
+        <Image src="/Plateau_d'échec_new_clan.png" alt="Plateau d'échec" width={700} height={500} objectFit="cover" objectPosition="center" className="border-8 rounded-lg border-black items-center" />
+        <div className=" flex flex-col text-center mx-auto">
+        <p className="whitespace-normal px-16">Le mode classique de GodsChess </p>
+        <p className="whitespace-normal">Mélanger 6 Dieux/Pouvoirs </p>
+        <p className="whitespace-normal">pour encore plus de combinaison </p>
+        </div>
       </div>
     </div>
   );

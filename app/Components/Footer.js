@@ -8,7 +8,7 @@ import { FaTwitch } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer>
-      <div className="bg-black container text-center text-white">
+      <div className="bg-black text-center text-white">
         <p className=""> Vous pouvez nous suivre sur </p>
         <p className="flex justify-center gap-2"><AiFillFacebook size={32} /> <FaDiscord size={32}/> <RiTwitterXFill size={32}/> <AiFillYoutube size={32}/> <FaTwitch size={32}/></p>
         <p className="">GodsChess 2023, Fabrice et Jean-Jacques Valmont. Tous droits réservés. Mentions légales.</p>

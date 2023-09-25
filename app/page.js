@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <main className="flex flex-col items-center">
+      <main className="">
         <SectionHomePagePlay/>
         <SectionHomePageMode/>
         <SectionHomePageGods/>
