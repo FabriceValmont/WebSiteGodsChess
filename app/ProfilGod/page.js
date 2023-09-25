@@ -8,18 +8,42 @@ const profilGod = () => {
           <Header/>
           <div className="w-full flex">
             <img src={"./image_dieux/Déesse_de_la_Téléportation_IA_-_Couleur.png"} width={300} height={150}/>
-            <div className="w-full text-center">
+            <div className="w-full text-center border-2 border-black">
                 <h1 className="m-2 text-2xl font-black">Déesse de la Téléportation</h1>
-                <div>
-                    <h2 className="m-2 text-xl font-black">Pouvoir</h2>
-                    <div className="flex justify-around m-2">
-                         <h3>Passif</h3>
-                         <h3>Pion</h3>
-                         <h3>Cavalier</h3>
-                         <h3>Fou</h3>
-                         <h3>Tour</h3>
-                         <h3>Reine</h3>
-                         <h3>Roi</h3>
+                <div className="border-2 border-black m-2">
+                    <div className='flex m-2'>
+                        <h2 className="flex w-1/6 justify-center items-center text-xl font-black border-2 border-black border-l-0 border-t-0 border-b-0">Pouvoir</h2>
+                        <h2 className="flex w-5/6 justify-center items-center text-xl font-black">Faction</h2>
+                    </div>
+                    <div className="flex justify-around mb-2 border-2 border-black border-r-0 border-l-0">
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-l-0">
+                            <h3>Passif</h3>
+                            <img src={"./signe_dieux/Signe_de_la_Téléportation.png"} width={100}/>
+                        </div>
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <h3>Pion</h3>
+                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Pion.png"} width={50}/>
+                        </div>
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <h3>Cavalier</h3>
+                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Cavalier.png"} width={50}/>
+                        </div>
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <h3>Fou</h3>
+                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Fou.png"} width={50}/>
+                        </div>
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <h3>Tour</h3>
+                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Tour.png"} width={50}/>
+                        </div>
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <h3>Reine</h3>
+                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Reine.png"} width={50}/>
+                        </div>
+                        <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-r-0">
+                            <h3>Roi</h3>
+                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Roi.png"} width={50}/>
+                        </div>
                     </div>
                     <div className="m-2">
                         <p>Chaque pièces possèdent sa zone de téléportation. La téléportation est obligatoirement symétrique par rapport à la pièce. Une pièce jouée sur une case comprenant deux zones de téléportation ou plus, la téléportation ne s’effectue pas. Il ne peut y avoir qu’une téléportation au cours d’un mouvement. Les pièces adverses ne peuvent pas activer la téléportation.</p>
