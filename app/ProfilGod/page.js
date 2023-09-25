@@ -7,9 +7,9 @@ const profilGod = () => {
         <div>
           <Header/>
           <div className="w-full flex">
-            <img src={"./image_dieux/Déesse_de_la_Téléportation_IA_-_Couleur.png"} width={300} height={150}/>
-            <div className="w-full text-center border-2 border-black">
-                <h1 className="m-2 text-2xl font-black">Déesse de la Téléportation</h1>
+            <img src={"./image_dieux/Déesse_de_la_Téléportation_IA_-_Couleur.png"} width={350} height={175}/>
+            <div className="w-full">
+                <h1 className="m-2 text-2xl font-black text-center">Déesse de la Téléportation</h1>
                 <div className="border-2 border-black m-2">
                     <div className='flex m-2'>
                         <h2 className="flex w-1/6 justify-center items-center text-xl font-black border-2 border-black border-l-0 border-t-0 border-b-0">Pouvoir</h2>
