@@ -1,15 +1,12 @@
-import React from 'react'
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import React from "react";
 
-const profilGod = () => {
+const ProfilGod = (props) => {
+
     return (
-        <div>
-          <Header/>
           <div className="w-full flex">
-            <img src={"./image_dieux/Déesse_de_la_Téléportation_IA_-_Couleur.png"} width={350} height={175}/>
+            <img src={props.sprite_god} width={350} height={175}/>
             <div className="w-full">
-                <h1 className="m-2 text-2xl font-black text-center">Déesse de la Téléportation</h1>
+                <h1 className="m-2 text-2xl font-black text-center">{props.name}</h1>
                 <div className="border-2 border-black m-2">
                     <div className='flex m-2'>
                         <h2 className="flex w-1/6 justify-center items-center text-xl font-black border-2 border-black border-l-0 border-t-0 border-b-0">Pouvoir</h2>
@@ -17,46 +14,58 @@ const profilGod = () => {
                     </div>
                     <div className="flex justify-around mb-2 border-2 border-black border-r-0 border-l-0">
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-l-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Passif</h3>
-                            <img src={"./signe_dieux/Signe_de_la_Téléportation.png"} width={100}/>
+                            <img src={props.sprite_sign} width={100}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <h3>Pion</h3>
-                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Pion.png"} width={50}/>
+                            <button className="w-full flex flex-col justify-center items-center">
+                                <h3>Pion</h3>
+                                <img src={props.sprite_pawn} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">  
                             <h3>Cavalier</h3>
-                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Cavalier.png"} width={50}/>
+                            <img src={props.sprite_knight} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Fou</h3>
-                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Fou.png"} width={50}/>
+                            <img src={props.sprite_bishop} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Tour</h3>
-                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Tour.png"} width={50}/>
+                            <img src={props.sprite_rook} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Reine</h3>
-                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Reine.png"} width={50}/>
+                            <img src={props.sprite_queen} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-r-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Roi</h3>
-                            <img src={"./piece_echec_dieux/Base_pièce_doubler_-_Roi.png"} width={50}/>
+                            <img src={props.sprite_king} width={50}/>
+                            </button>
                         </div>
                     </div>
                     <div className="m-2">
-                        <p>Chaque pièces possèdent sa zone de téléportation. La téléportation est obligatoirement symétrique par rapport à la pièce. Une pièce jouée sur une case comprenant deux zones de téléportation ou plus, la téléportation ne s’effectue pas. Il ne peut y avoir qu’une téléportation au cours d’un mouvement. Les pièces adverses ne peuvent pas activer la téléportation.</p>
+                        <p>{props.explanation_power_passif}</p>
                     </div>
                     <div className="m-2 flex justify-center items-center">
-                        <img src={"./gif_pouvoir_dieux/Plateau_d'échec_Spécial_gif_passif_1.gif"} width={300}/>
+                        <img src={props.gif_power_passif} width={300}/>
                     </div>
                 </div>
             </div>
           </div>
-          <Footer/>
-        </div>
       );
     }
 
-export default profilGod
+export default ProfilGod
