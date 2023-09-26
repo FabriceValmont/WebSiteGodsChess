@@ -1,24 +1,39 @@
 import React from 'react'
+import dataProfilGods from '@/dataProfilGods';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import ProfilGod from '../../Components/ProfilGod';
 
 const GoddessOfTeleportation = () => {
+
+    const data = dataProfilGods
     return (
         <div>
           <Header/>
           <ProfilGod
-            name="Déesse de la Téléportation"
-            sprite_god="../gods/Déesse_de_la_téléportation/Déesse_de_la_Téléportation_IA_-_Couleur.png"
-            sprite_sign="../gods/Déesse_de_la_téléportation/Signe_de_la_Téléportation.png"
-            sprite_pawn="../gods/Déesse_de_la_téléportation/Base_pièce_doubler_-_Pion.png"
-            sprite_knight="../gods/Déesse_de_la_téléportation/Base_pièce_doubler_-_Cavalier.png"
-            sprite_bishop="../gods/Déesse_de_la_téléportation/Base_pièce_doubler_-_Fou.png"
-            sprite_rook="../gods/Déesse_de_la_téléportation/Base_pièce_doubler_-_Tour.png"
-            sprite_queen="../gods/Déesse_de_la_téléportation/Base_pièce_doubler_-_Reine.png"
-            sprite_king="../gods/Déesse_de_la_téléportation/Base_pièce_doubler_-_Roi.png"
-            explanation_power="Chaque pièces possèdent sa zone de téléportation. La téléportation est obligatoirement symétrique par rapport à la pièce. Une pièce jouée sur une case comprenant deux zones de téléportation ou plus, la téléportation ne s’effectue pas. Il ne peut y avoir qu’une téléportation au cours d’un mouvement. Les pièces adverses ne peuvent pas activer la téléportation."
-            gif_power="../gods/Déesse_de_la_téléportation/Plateau_d'échec_Spécial_gif_passif_1.gif"
+            name={data[0].name}
+            sprite_god={data[0].sprite_god}
+            sprite_sign={data[0].sprite_sign}
+            sprite_pawn={data[0].sprite_pawn}
+            sprite_knight={data[0].sprite_knight}
+            sprite_bishop={data[0].sprite_bishop}
+            sprite_rook={data[0].sprite_rook}
+            sprite_queen={data[0].sprite_queen}
+            sprite_king={data[0].sprite_king}
+            explanation_power_passif={data[0].explanation_power_passif}
+            explanation_power_pawn={data[0].explanation_power_pawn}
+            explanation_power_knight={data[0].explanation_power_knight}
+            explanation_power_bishop={data[0].explanation_power_bishop}
+            explanation_power_rook={data[0].explanation_power_rook}
+            explanation_power_queen={data[0].explanation_power_queen}
+            explanation_power_king={data[0].explanation_power_king}
+            gif_power_passif={data[0].gif_power_passif}
+            gif_power_pawn={data[0].gif_power_pawn}
+            gif_power_knight={data[0].gif_power_knight}
+            gif_power_bishop={data[0].gif_power_bishop}
+            gif_power_rook={data[0].gif_power_rook}
+            gif_power_queen={data[0].gif_power_queen}
+            gif_power_king={data[0].gif_power_king}
             />
           <Footer/>
         </div>

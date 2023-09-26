@@ -5,14 +5,14 @@ export default function CardGod (props) {
     let href = "/Dieux/GoddessOfTeleportation";
 
     if (props.item.name === "Déesse de la Téléportation") {
-
         href = "/Dieux/GoddessOfTeleportation";
       }
     else if (props.item.name === "Dieu de la Mort") {
-
         href = "/Dieux/GodOfDeath";
+    }else{
+        href = "/Dieux";
     }
-
+        
     return (
         <div className="bg-white p-4 shadow-md rounded-lg flex flex-col items-center text-center">
             <img src={props.item.img} width={150} height={75}/>

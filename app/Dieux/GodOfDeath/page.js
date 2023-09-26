@@ -1,24 +1,39 @@
 import React from 'react'
+import dataProfilGods from '@/dataProfilGods';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import ProfilGod from '@/app/Components/ProfilGod';
 
 const GodOfDeath = () => {
+
+    const data = dataProfilGods
     return (
         <div>
           <Header/>
           <ProfilGod
-            name="Dieu de la Mort"
-            sprite_god="../gods/Dieu_de_la_mort/Dieu_de_la_Mort_IA_-_Couleur.png"
-            sprite_sign="../gods/Dieu_de_la_mort/Signe_de_la_Mort.png"
-            sprite_pawn="../gods/Dieu_de_la_mort/Base_pièce_doubler_-_Pion.png"
-            sprite_knight="../gods/Dieu_de_la_mort/Base_pièce_doubler_-_Cavalier.png"
-            sprite_bishop="../gods/Dieu_de_la_mort/Base_pièce_doubler_-_Fou.png"
-            sprite_rook="../gods/Dieu_de_la_mort/Base_pièce_doubler_-_Tour.png"
-            sprite_queen="../gods/Dieu_de_la_mort/Base_pièce_doubler_-_Reine.png"
-            sprite_king="../gods/Dieu_de_la_mort/Base_pièce_doubler_-_Roi.png"
-            explanation_power="Lorsqu’une de vos pièces ce fait prendre par une pièces adverses, pose un compte à rebours sur une pièces adverse aléatoirement par rapport à l’échelle de force de GodChess. Le compte à rebours est de 5 tours. La faction pris ne peut poser un compte à rebours seulement sur une faction inférieur à lui (Exception lié à la faction des pions). L’effet de la mort ne s’active que si la pièce se fait prendre seulement."
-            gif_power="../gods/Dieu_de_la_mort/Plateau_d'échec_animation_Mort_passif_1.gif"
+            name={data[1].name}
+            sprite_god={data[1].sprite_god}
+            sprite_sign={data[1].sprite_sign}
+            sprite_pawn={data[1].sprite_pawn}
+            sprite_knight={data[1].sprite_knight}
+            sprite_bishop={data[1].sprite_bishop}
+            sprite_rook={data[1].sprite_rook}
+            sprite_queen={data[1].sprite_queen}
+            sprite_king={data[1].sprite_king}
+            explanation_power_passif={data[1].explanation_power_passif}
+            explanation_power_pawn={data[1].explanation_power_pawn}
+            explanation_power_knight={data[1].explanation_power_knight}
+            explanation_power_bishop={data[1].explanation_power_bishop}
+            explanation_power_rook={data[1].explanation_power_rook}
+            explanation_power_queen={data[1].explanation_power_queen}
+            explanation_power_king={data[1].explanation_power_king}
+            gif_power_passif={data[1].gif_power_passif}
+            gif_power_pawn={data[1].gif_power_pawn}
+            gif_power_knight={data[1].gif_power_knight}
+            gif_power_bishop={data[1].gif_power_bishop}
+            gif_power_rook={data[1].gif_power_rook}
+            gif_power_queen={data[1].gif_power_queen}
+            gif_power_king={data[1].gif_power_king}
             />
           <Footer/>
         </div>

@@ -1,8 +1,8 @@
 import React from "react";
 
 const ProfilGod = (props) => {
+
     return (
-        <div>
           <div className="w-full flex">
             <img src={props.sprite_god} width={350} height={175}/>
             <div className="w-full">
@@ -14,44 +14,57 @@ const ProfilGod = (props) => {
                     </div>
                     <div className="flex justify-around mb-2 border-2 border-black border-r-0 border-l-0">
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-l-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Passif</h3>
                             <img src={props.sprite_sign} width={100}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <h3>Pion</h3>
-                            <img src={props.sprite_pawn} width={50}/>
+                            <button className="w-full flex flex-col justify-center items-center">
+                                <h3>Pion</h3>
+                                <img src={props.sprite_pawn} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">  
                             <h3>Cavalier</h3>
                             <img src={props.sprite_knight} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Fou</h3>
                             <img src={props.sprite_bishop} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Tour</h3>
                             <img src={props.sprite_rook} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Reine</h3>
                             <img src={props.sprite_queen} width={50}/>
+                            </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-r-0">
+                            <button className="w-full flex flex-col justify-center items-center">
                             <h3>Roi</h3>
                             <img src={props.sprite_king} width={50}/>
+                            </button>
                         </div>
                     </div>
                     <div className="m-2">
-                        <p>{props.explanation_power}</p>
+                        <p>{props.explanation_power_passif}</p>
                     </div>
                     <div className="m-2 flex justify-center items-center">
-                        <img src={props.gif_power} width={300}/>
+                        <img src={props.gif_power_passif} width={300}/>
                     </div>
                 </div>
             </div>
           </div>
-        </div>
       );
     }
 
