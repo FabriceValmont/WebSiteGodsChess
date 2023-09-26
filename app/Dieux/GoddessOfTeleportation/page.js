@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import Header from '../../Components/Header';
+import Footer from '../../Components/Footer';
 
-const profilGod = () => {
+const GoddessOfTeleportation = () => {
     return (
         <div>
           <Header/>
@@ -59,4 +59,4 @@ const profilGod = () => {
       );
     }
 
-export default profilGod
+export default GoddessOfTeleportation
