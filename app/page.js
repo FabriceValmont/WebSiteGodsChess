@@ -5,13 +5,20 @@ import SectionHomePagePlay from "./Components/SectionHomePagePlay";
 import SectionHomePageMode from "./Components/SectionHomePageMode";
 import SectionHomePageGods from "./Components/SectionHomePageGods";
 import SectionHomePageContact from "./Components/SectionHomePageContact";
+import { Black_Ops_One} from "@next/font/google"
+
+const BOO = Black_Ops_One({
+  subsets: ['latin'],
+  weight: ['400']
+
+})
 
 export default function Home() {
 
   return (
     <div>
       <Header />
-      <main className="">
+      <main className={BOO.className}>
         <SectionHomePagePlay/>
         <SectionHomePageMode/>
         <SectionHomePageGods/>
