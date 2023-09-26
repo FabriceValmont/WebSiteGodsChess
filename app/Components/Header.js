@@ -1,10 +1,13 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Header = () => {
+  
   return (
-    <header className="bg-black">
+    <header className="bg-black sticky top-0 z-10">
         <nav>
           <ul className ="flex items-center justify-between">
             <div className ="flex items-center">

@@ -8,7 +8,7 @@ const SectionHomePage = () => {
       <p className="text-5xl text-white text-center">Le jeu d'échec le plus stratégique au monde !</p>
       <div className="relative">
         <Image src="/Bouton_entier.png" alt="Bouton" width={300} height={150} objectFit="cover" objectPosition="center" className="mx-auto my-3" />
-        <p className="absolute text-6xl text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Jouer</p>
+        <button className="absolute text-6xl text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Jouer</button>
       </div>
     </div>
   );
