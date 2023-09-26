@@ -21,7 +21,10 @@ const Header = () => {
               <Link href="/Dieux">Dieux</Link>
             </li>
             </div>
-            <div>
+            <div className="flex items-center">
+            <li className="mr-4 text-white text-[14px]">
+            <Link href="/Inscription">Inscription</Link>
+            </li>
             <Image className="justify-end" src="/Image_compte_T.png" alt="Compte connection" width={100} height={50} />
             </div>
           </ul>
