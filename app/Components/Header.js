@@ -25,7 +25,9 @@ const Header = () => {
             <li className="mr-4 text-white text-[14px]">
             <Link href="/Inscription">Inscription</Link>
             </li>
-            <Image className="justify-end" src="/Image_compte_T.png" alt="Compte connection" width={100} height={50} />
+              <Link href="/Connexion">           
+              <Image className="justify-end" src="/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
+              </Link>
             </div>
           </ul>
         </nav>
