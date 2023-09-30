@@ -7,6 +7,7 @@ import ProfilGod from '../../Components/ProfilGod';
 const GoddessOfTeleportation = () => {
 
     const data = dataProfilGods
+
     return (
         <div>
           <Header/>
