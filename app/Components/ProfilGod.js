@@ -144,53 +144,55 @@ const ProfilGod = (props) => {
                     </div>
                     <div className="flex justify-around mb-2 border-2 border-black border-r-0 border-l-0">
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-l-0">
-                            <button onClick={passifClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
+                            <button onClick={passifClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
                             <h3 className={myClassNamePassif}>Passif</h3>
                             <img src={props.sprite_sign} width={106}/>
                             </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <button onClick={pawnClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
+                            <button onClick={pawnClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
                                 <h3 className={myClassNamePawn}>Pion</h3>
                                 <img src={props.sprite_pawn} width={60}/>
                             </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <button onClick={knightClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">  
+                            <button onClick={knightClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">  
                             <h3 className={myClassNameKnight}>Cavalier</h3>
                             <img src={props.sprite_knight} width={60}/>
                             </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <button onClick={bishopClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
+                            <button onClick={bishopClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
                             <h3 className={myClassNameBishop}>Fou</h3>
                             <img src={props.sprite_bishop} width={60}/>
                             </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <button  onClick={rookClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
+                            <button  onClick={rookClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
                             <h3 className={myClassNameRook}>Tour</h3>
                             <img src={props.sprite_rook} width={60}/>
                             </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0">
-                            <button onClick={queenClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
+                            <button onClick={queenClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
                             <h3 className={myClassNameQueen}>Reine</h3>
                             <img src={props.sprite_queen} width={60}/>
                             </button>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center border-2 border-black border-t-0 border-b-0 border-r-0">
-                            <button onClick={kingClick} className="w-full flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
+                            <button onClick={kingClick} className="w-full text-lg flex flex-col justify-center items-center transform hover:bg-gradient-to-br from-gray-400 to-gray-800">
                             <h3 className={myClassNameKing}>Roi</h3>
                             <img src={props.sprite_king} width={60}/>
                             </button>
                         </div>
                     </div>
-                    <div className="m-2">
-                        <p>{textExplain}</p>
-                    </div>
-                    <div className="m-2 flex justify-center items-center">
-                        <img src={gifExplain} width={300}/>
+                    <div className="flex">
+                        <div className="w-2/3 m-2 flex text-xl">
+                            <p>{textExplain}</p>
+                        </div>
+                        <div className="w-1/3 m-2 flex justify-center items-center">
+                            <img src={gifExplain} width={400} className=""/>
+                        </div>
                     </div>
                 </div>
             </div>
