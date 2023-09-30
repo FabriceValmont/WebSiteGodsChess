@@ -17,6 +17,7 @@ const Dieux = () => {
     return (
         <div>
           <Header/>
+          <h1 className="flex m-2 justify-center items-center text-center text-5xl font-semibold">Dieux et Déesse</h1>
           <div className="m-4 grid grid-cols-5">
             {cardsGods}
           </div>
