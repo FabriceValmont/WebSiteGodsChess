@@ -1,10 +1,10 @@
 "use client"
-import React from "react";
+import React, {useState} from "react";
 
 const ProfilGod = (props) => {
 
-    const [textExplain, setTextExplain] = React.useState(props.explanation_power_passif)
-    const [gifExplain, setgifExplain] = React.useState(props.gif_power_passif)
+    const [textExplain, setTextExplain] = useState(props.explanation_power_passif)
+    const [gifExplain, setgifExplain] = useState(props.gif_power_passif)
     
     function passifClick () {
         if (textExplain != props.explanation_power_passif){

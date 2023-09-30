@@ -17,7 +17,7 @@ const Dieux = () => {
     return (
         <div>
           <Header/>
-          <div className="grid grid-cols-5">
+          <div className="m-4 grid grid-cols-5">
             {cardsGods}
           </div>
           <Footer/>

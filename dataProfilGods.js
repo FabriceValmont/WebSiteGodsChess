@@ -44,7 +44,7 @@ export default [
         explanation_power_bishop:"Pose un compte à rebours aléatoirement sur un pion ou un cavalier adverse.",
         explanation_power_rook:"Pose un compte à rebours aléatoirement sur un pion, un cavalier ou un fou adverse.",
         explanation_power_queen:"Pose un compte à rebours aléatoirement sur un pion, un cavalier, un fou ou une tour adverse.",
-        explanation_power_king:"Quand le roi se fait mettre en échec pose un compte un rebourssur n’importe quelles pièces.(3 utilisations)",
+        explanation_power_king:"Quand le roi se fait mettre en échec pose un compte un rebours sur n’importe quelles pièces.(3 utilisations)",
         gif_power_passif:"../gods/Dieu_de_la_mort/Plateau_d'échec_animation_Mort_passif_1.gif",
         gif_power_pawn:"../gods/Dieu_de_la_mort/Plateau_d'échec_animation_Mort_pion.gif",
         gif_power_knight:"../gods/Dieu_de_la_mort/Plateau_d'échec_animation_Mort_cavalier.gif",
