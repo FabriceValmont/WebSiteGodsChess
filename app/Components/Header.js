@@ -20,6 +20,9 @@ const Header = () => {
             <li className="mr-4 text-white text-[24px]">
               <Link href="/Dieux">Dieux</Link>
             </li>
+            <li className="mr-4 text-white text-[24px]">
+              <Link href="/Contact">Contact</Link>
+            </li>
             </div>
             <div className="flex items-center">
             <li className="mr-4 text-white text-[14px]">

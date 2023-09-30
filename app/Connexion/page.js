@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-const Inscription = () => {
+const Connexion = () => {
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
         <Header/>
@@ -47,4 +47,4 @@ const Inscription = () => {
 );
 }
 
-export default Inscription
+export default Connexion

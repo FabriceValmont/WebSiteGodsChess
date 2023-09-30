@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const SectionHomePage = () => {
+const SectionHomePagePlay = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center bg-cover bg-center relative" style={{ backgroundImage: 'url(/Fond_site_web1.png)' }}>
       <Image src="/New_logo_Dimension.png" alt="Logo" width={750} height={250} objectFit="cover" objectPosition="center" className="mx-auto my-3" />
@@ -14,4 +14,4 @@ const SectionHomePage = () => {
   );
 }
 
-export default SectionHomePage;
+export default SectionHomePagePlay;
