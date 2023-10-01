@@ -5,12 +5,19 @@ import SectionGameplayClan from '../Components/SectionGameplayClan';
 import SectionGameplayRules from '../Components/SectionGameplayRules';
 import SectionGameplayFaction from '../Components/SectionGameplayFaction';
 import SectionGameplayRulesGodsChess from '../Components/SectionGameplayRulesGodsChess';
+import { Black_Ops_One} from "@next/font/google"
+
+const BOO = Black_Ops_One({
+    subsets: ['latin'],
+    weight: ['400']
+  
+  })
 
 const Gameplay = () => {
     return (
-        <div>
+        <div className={BOO.className}>
           <Header/>
-          <main className="">
+          <main>
             <SectionGameplayRules/>
             <SectionGameplayClan/>
             <SectionGameplayFaction/>

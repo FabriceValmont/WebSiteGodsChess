@@ -3,13 +3,20 @@ import dataProfilGods from '@/dataProfilGods';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import ProfilGod from '../../Components/ProfilGod';
+import { Black_Ops_One} from "@next/font/google"
+
+const BOO = Black_Ops_One({
+    subsets: ['latin'],
+    weight: ['400']
+  
+  })
 
 const GoddessOfTeleportation = () => {
 
     const data = dataProfilGods
 
     return (
-        <div>
+        <div className={BOO.className}>
           <Header/>
           <ProfilGod
             name={data[0].name}
