@@ -13,7 +13,7 @@ const cardsGods = data.map(item => {
     )
   })
 
-const Dieux = () => {
+const Gods = () => {
     return (
         <div>
           <Header/>
@@ -26,4 +26,4 @@ const Dieux = () => {
       );
     }
 
-export default Dieux
+export default Gods

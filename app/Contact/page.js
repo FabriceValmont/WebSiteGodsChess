@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-const contact = () => {
+const Contact = () => {
   return (
     <div className="w-full h-screen flex flex-col bg-cover bg-center relative mx-auto" style={{ backgroundImage: 'url(contact/Porte_GodsChess.png)' }}>
       <Header/>
@@ -20,4 +20,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact

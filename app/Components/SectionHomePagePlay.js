@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const SectionHomePagePlay = () => {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center bg-cover bg-center relative" style={{ backgroundImage: 'url(homePage/Fond_site_web1.png)' }}>
+    <div className="w-full h-screen flex flex-col justify-center items-center bg-cover bg-center relative" style={{ backgroundImage: 'url(/homePage/Fond_site_web1.png)' }}>
       <Image src="/homePage/New_logo_Dimension.png" alt="Logo" width={750} height={250} objectFit="cover" objectPosition="center" className="mx-auto my-3" />
       <p className="text-5xl text-white text-center">Le jeu d'échec le plus stratégique au monde !</p>
       <div className="relative">

@@ -15,7 +15,7 @@ const Header = () => {
                 <Image className="mr-4" src="/header/New_logo_Dimension.png" alt="Logo GodsChess" width={150} height={75}/>
               </Link>
             <li className="mr-4 text-white text-[24px]">
-              <Link href="/">Gameplay</Link>
+              <Link href="/Gameplay">Gameplay</Link>
               </li>
             <li className="mr-4 text-white text-[24px]">
               <Link href="/Gods">Dieux</Link>
