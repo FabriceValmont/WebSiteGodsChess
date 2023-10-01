@@ -4,7 +4,7 @@ import Footer from '../Components/Footer';
 
 const contact = () => {
   return (
-    <div className="w-full h-screen flex flex-col bg-cover bg-center relative mx-auto" style={{ backgroundImage: 'url(/Porte_GodsChess.png)' }}>
+    <div className="w-full h-screen flex flex-col bg-cover bg-center relative mx-auto" style={{ backgroundImage: 'url(contact/Porte_GodsChess.png)' }}>
       <Header/>
       <div className="text-7xl text-white mx-auto">
       <p>Contact</p>

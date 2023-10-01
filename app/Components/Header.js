@@ -12,13 +12,13 @@ const Header = () => {
           <ul className ="flex items-center justify-between">
             <div className ="flex items-center">
               <Link href="/">
-                <Image className="mr-4" src="/New_logo_Dimension.png" alt="Logo GodsChess" width={150} height={75}/>
+                <Image className="mr-4" src="/header/New_logo_Dimension.png" alt="Logo GodsChess" width={150} height={75}/>
               </Link>
             <li className="mr-4 text-white text-[24px]">
               <Link href="/">Gameplay</Link>
               </li>
             <li className="mr-4 text-white text-[24px]">
-              <Link href="/Dieux">Dieux</Link>
+              <Link href="/Gods">Dieux</Link>
             </li>
             <li className="mr-4 text-white text-[24px]">
               <Link href="/Contact">Contact</Link>
@@ -26,10 +26,10 @@ const Header = () => {
             </div>
             <div className="flex items-center">
             <li className="mr-4 text-white text-[14px]">
-            <Link href="/Inscription">Inscription</Link>
+            <Link href="/SignIn">Inscription</Link>
             </li>
-              <Link href="/Connexion">           
-              <Image className="justify-end" src="/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
+              <Link href="/Login">           
+              <Image className="justify-end" src="/header/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
               </Link>
             </div>
           </ul>

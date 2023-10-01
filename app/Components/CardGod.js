@@ -2,15 +2,15 @@ import React from "react"
 import Link from "next/link"
 
 export default function CardGod (props) {
-    let href = "/Dieux/GoddessOfTeleportation";
+    let href = "/Gods/GoddessOfTeleportation";
 
     if (props.item.name === "Déesse de la Téléportation") {
-        href = "/Dieux/GoddessOfTeleportation";
+        href = "/Gods/GoddessOfTeleportation";
       }
     else if (props.item.name === "Dieu de la Mort") {
-        href = "/Dieux/GodOfDeath";
+        href = "/Gods/GodOfDeath";
     }else{
-        href = "/Dieux";
+        href = "/Gods";
     }
         
     return (
