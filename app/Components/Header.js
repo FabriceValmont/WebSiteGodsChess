@@ -23,6 +23,9 @@ const Header = () => {
             <li className="mr-4 text-white text-[24px]">
               <Link href="/Contact">Contact</Link>
             </li>
+            <li className="mr-4 text-white text-[24px]">
+              <Link href="/Store">Magasin</Link>
+            </li>
             </div>
             <div className="flex items-center">
             <li className="mr-4 text-white text-[14px]">
