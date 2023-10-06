@@ -1,5 +1,6 @@
-import data from '@/data';
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 import CardGod from '../Components/CardGod';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -11,7 +12,18 @@ const BOO = Black_Ops_One({
 
 })
 
-const cardsGods = data.map(item => {
+const Gods = () => {
+  const [dataSelectGods, setDataSelectGods] = useState([])
+
+  const fetchData = async () => {
+    const response = await fetch('http://localhost:3000/Gods');
+    const data = await response.json()
+    setDataSelectGods(data)
+  }
+
+  fetchData()
+  
+  const cardsGods = dataSelectGods.map(item => {
     return (
         <CardGod
             key={item.id}
@@ -20,7 +32,6 @@ const cardsGods = data.map(item => {
     )
   })
 
-const Gods = () => {
     return (
         <div className={BOO.className}>
           <Header/>
