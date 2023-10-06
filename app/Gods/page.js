@@ -16,7 +16,7 @@ const Gods = () => {
   const [dataSelectGods, setDataSelectGods] = useState([])
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:3000/Gods');
+    const response = await fetch('http://localhost:3000/selectionGods');
     const data = await response.json()
     setDataSelectGods(data)
   }
