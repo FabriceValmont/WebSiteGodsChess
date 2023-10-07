@@ -1,17 +1,32 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Link from "next/link"
 
 export default function CardGod (props) {
-    let href = "/Gods/GoddessOfTeleportation";
+    
+    const [arrayNameGods, setArrayNameGods] = useState(
+    [{nameFr: "Déesse de la Téléportation", nameEn: "GoddessOfTeleportation"},
+    {nameFr: "Dieu de la Mort", nameEn: "GodOfDeath"},
+    {nameFr: "Dieu de la Terre", nameEn: "GodOfEarth"},
+    {nameFr: "Dieu de la Secte", nameEn: "GodOftheCult"},
+    {nameFr: "Déesse de l'Eau", nameEn: "GoddessOfWater"},
+    {nameFr: "Dieu de la Glace", nameEn: "GodOfIce"},
+    {nameFr: "Déesse de la Vie", nameEn: "GoddessOfLife"},
+    {nameFr: "Dieu du Feu", nameEn: "GodOfFire"},
+    {nameFr: "Déesse de la Foudre", nameEn: "GoddessOfThunder"},
+    {nameFr: "Déesse du Vent", nameEn: "GoddessOfWind"},])
+    
+    const [href, setHref] = useState("/Gods");
 
-    if (props.item.name === "Déesse de la Téléportation") {
-        href = "/Gods/GoddessOfTeleportation";
+  useEffect(() => {
+    for (let i = 0; i < arrayNameGods.length; i++) {
+      if (props.item.name === arrayNameGods[i].nameFr) {
+        setHref(`/Gods/${arrayNameGods[i].nameEn}`);
+        return;
       }
-    else if (props.item.name === "Dieu de la Mort") {
-        href = "/Gods/GodOfDeath";
-    }else{
-        href = "/Gods";
     }
+    
+    setHref("/Gods");
+  }, [props.item.name, arrayNameGods]);
         
     return (
         <Link href={href}>
