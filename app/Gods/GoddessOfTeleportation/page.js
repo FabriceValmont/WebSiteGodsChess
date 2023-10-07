@@ -1,10 +1,11 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import ProfilGod from '../../Components/ProfilGod';
 import { Black_Ops_One} from "@next/font/google"
+import useFetch from '@/app/CustomHooks/useFetch';
 
 const BOO = Black_Ops_One({
     subsets: ['latin'],
@@ -13,21 +14,8 @@ const BOO = Black_Ops_One({
   })
 
 const GoddessOfTeleportation = () => {
-  const [dataProfilGods, setDataProfilGods] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/gods');
-        const data = await response.json();
-        setDataProfilGods(data);
-      } catch (error) {
-        console.error('Erreur lors de la récupération des données :', error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const dataProfilGods = useFetch('http://localhost:3000/gods')
 
     return (
         <div className={BOO.className}>

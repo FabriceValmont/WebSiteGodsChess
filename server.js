@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-// Appel de la base de donnée 
 const {Client} = require("pg")
 
 let dataSelectionGods = []
@@ -15,6 +14,7 @@ app.get("/Gods", (req, res) => {
     res.send(dataGods)
 })
 
+// Appel de la base de donnée 
 const client = new Client ({
     host: "localhost",
     user: "postgres",

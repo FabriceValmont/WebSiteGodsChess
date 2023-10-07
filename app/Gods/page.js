@@ -1,10 +1,11 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 import CardGod from '../Components/CardGod';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Black_Ops_One} from "@next/font/google"
+import useFetch from '../CustomHooks/useFetch';
 
 const BOO = Black_Ops_One({
   subsets: ['latin'],
@@ -13,15 +14,8 @@ const BOO = Black_Ops_One({
 })
 
 const Gods = () => {
-  const [dataSelectGods, setDataSelectGods] = useState([])
-
-  const fetchData = async () => {
-    const response = await fetch('http://localhost:3000/selectionGods');
-    const data = await response.json()
-    setDataSelectGods(data)
-  }
-
-  fetchData()
+  
+  const dataSelectGods = useFetch('http://localhost:3000/selectionGods')
   
   const cardsGods = dataSelectGods.map(item => {
     return (
