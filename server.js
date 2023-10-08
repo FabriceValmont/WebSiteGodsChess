@@ -3,7 +3,7 @@ const app = express();
 const http = require('http').Server(app);
 const bodyParser = require('body-parser'); // Ajout du middleware body-parser
 const cors = require('cors'); // Importez le package cors
-const {Client} = require("pg")
+const {Pool} = require("pg")
 
 let dataSelectionGods = []
 let dataGods = []
@@ -12,15 +12,13 @@ app.use(cors({ origin: 'http://localhost:3000' })); // Configurez cors pour auto
 app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analyser les données JSON
 
 // Appel de la base de donnée 
-const client = new Client ({
+const pool = new Pool ({
     host: "localhost",
     user: "postgres",
     port: 5434,
     password: "1234",
     database: "postgres"
 })
-
-client.connect()
 
 app.get("/selectionGods", (req, res) => {
     res.send(dataSelectionGods)
@@ -37,7 +35,7 @@ app.post("/inscription", (req, res) => {
   
     // Effectuez les opérations nécessaires dans la base de données ici
     // Exemple : insérer les données dans la base de données
-    client.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
+    pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).json({ message: "Erreur lors de l'inscription" });
@@ -47,7 +45,7 @@ app.post("/inscription", (req, res) => {
     });
 });
 
-client.query(`SELECT * FROM selection_gods`, (err, res) => {
+pool.query(`SELECT * FROM selection_gods`, (err, res) => {
     if(!err){
         dataSelectionGods = res.rows
         //console.log(dataSelectionGods,"dataSelectionGods")
@@ -58,7 +56,7 @@ client.query(`SELECT * FROM selection_gods`, (err, res) => {
     }
 })
 
-client.query(`SELECT * FROM gods`, (err, res) => {
+pool.query(`SELECT * FROM gods`, (err, res) => {
     if(!err){
         dataGods = res.rows
         //console.log(dataGods,"dataGods")
@@ -67,14 +65,13 @@ client.query(`SELECT * FROM gods`, (err, res) => {
         console.log(err.message)
         res.status(500).send("Erreur lors de la récupération des données depuis la base de données");
     }
-    // client.end()
 })
 
 setTimeout(() => {
     console.log(dataSelectionGods, "dataSelectionGods")
     console.log(dataGods, "dataGods")
-    console.log("Le délai de 3 secondes est écoulé.");
-  }, 3000);
+    console.log("Le délai de 1 seconde est écoulé.");
+  }, 1000);
 
 // Lancer le serveur
 http.listen(3000, () => {
