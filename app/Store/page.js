@@ -1,9 +1,11 @@
-import dataItem from '@/dataItem';
+'use client'
+
 import React from 'react'
 import CardItem from '../Components/CardItem';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Black_Ops_One} from "@next/font/google"
+import useFetch from '../CustomHooks/useFetch';
 
 const BOO = Black_Ops_One({
   subsets: ['latin'],
@@ -11,16 +13,19 @@ const BOO = Black_Ops_One({
 
 })
 
-const cardsItems= dataItem.map(item => {
-    return (
-        <CardItem
-            key={item.id}
-            item={item}
-        />
-    )
-  })
-
 const Item = () => {
+
+  const dataItem = useFetch('http://localhost:3000/produits')
+
+  const cardsItems= dataItem.map(item => {
+      return (
+          <CardItem
+              key={item.id}
+              item={item}
+          />
+      )
+    })
+
     return (
         <div className={BOO.className}>
           <Header/>

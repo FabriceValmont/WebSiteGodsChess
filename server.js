@@ -5,17 +5,25 @@ const bodyParser = require('body-parser'); // Ajout du middleware body-parser
 const cors = require('cors'); // Importez le package cors
 const {Pool} = require("pg")
 
+app.use(cors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204
+}));
+
 let dataSelectionGods = []
 let dataGods = []
+let dataProduits = []
 
-app.use(cors({ origin: 'http://localhost:3000' })); // Configurez cors pour autoriser les requêtes depuis http://localhost:3000
 app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analyser les données JSON
+// app.options('*', cors()); 
 
 // Appel de la base de donnée 
 const pool = new Pool ({
     host: "localhost",
     user: "postgres",
-    port: 5434,
+    port: 5432,
     password: "1234",
     database: "postgres"
 })
@@ -28,37 +36,53 @@ app.get("/Gods", (req, res) => {
     res.send(dataGods)
 })
 
-// Route pour gérer la soumission du formulaire POST
-app.post("/inscription", (req, res) => {
-    // Récupérez les données du corps de la requête
-    const { name, email, password } = req.body;
-  
-    // Effectuez les opérations nécessaires dans la base de données ici
-    // Exemple : insérer les données dans la base de données
-    pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ message: "Erreur lors de l'inscription" });
-      } else {
-        res.status(200).json({ message: "Inscription réussie" });
-      }
-    });
-});
-
-pool.query(`SELECT * FROM selection_gods`, (err, res) => {
-    if(!err){
-        dataSelectionGods = res.rows
-        //console.log(dataSelectionGods,"dataSelectionGods")
-    }
-    else{
-        console.log(err.message)
-        res.status(500).send("Erreur lors de la récupération des données depuis la base de données");
-    }
+app.get("/produits", (req, res) => {
+    res.send(dataProduits)
 })
 
-pool.query(`SELECT * FROM gods`, (err, res) => {
+
+// // Route pour gérer la soumission du formulaire POST
+// app.post("/inscription", (req, res) => {
+//     // Récupérez les données du corps de la requête
+//     const { name, email, password } = req.body;
+  
+//     // Effectuez les opérations nécessaires dans la base de données ici
+//     // Exemple : insérer les données dans la base de données
+//     pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
+//       if (err) {
+//         console.error(err);
+//         res.status(500).json({ message: "Erreur lors de l'inscription" });
+//       } else {
+//         res.status(200).json({ message: "Inscription réussie" });
+//       }
+//     });
+// });
+
+// pool.query(`SELECT * FROM selection_gods`, (err, res) => {
+//     if(!err){
+//         dataSelectionGods = res.rows
+//         //console.log(dataSelectionGods,"dataSelectionGods")
+//     }
+//     else{
+//         console.log(err.message)
+//         res.status(500).send("Erreur lors de la récupération des données depuis la base de données");
+//     }
+// })
+
+// pool.query(`SELECT * FROM gods`, (err, res) => {
+//     if(!err){
+//         dataGods = res.rows
+//         //console.log(dataGods,"dataGods")
+//     }
+//     else{
+//         console.log(err.message)
+//         res.status(500).send("Erreur lors de la récupération des données depuis la base de données");
+//     }
+// })
+
+pool.query(`SELECT * FROM produits`, (err, res) => {
     if(!err){
-        dataGods = res.rows
+        dataProduits = res.rows
         //console.log(dataGods,"dataGods")
     }
     else{
@@ -68,8 +92,9 @@ pool.query(`SELECT * FROM gods`, (err, res) => {
 })
 
 setTimeout(() => {
-    console.log(dataSelectionGods, "dataSelectionGods")
-    console.log(dataGods, "dataGods")
+    // console.log(dataSelectionGods, "dataSelectionGods")
+    // console.log(dataGods, "dataGods")
+    console.log(dataProduits, "dataProduits")
     console.log("Le délai de 1 seconde est écoulé.");
   }, 1000);
 

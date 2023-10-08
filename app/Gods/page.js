@@ -5,7 +5,7 @@ import CardGod from '../Components/CardGod';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Black_Ops_One} from "@next/font/google"
-import useFetch from '../CustomHooks/useFetch';
+import useFetch from '@/app/CustomHooks/useFetch';
 
 const BOO = Black_Ops_One({
   subsets: ['latin'],
