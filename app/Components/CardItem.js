@@ -4,7 +4,7 @@ import Link from "next/link"
 export default function CardItem (props) {
     let href = "/Store";
 
-    if (props.item.nom === "Item 1") {
+    if (props.item.nom === "T-shirt GodsChess") {
         href = "/Store/Item1";
       }
     else if (props.item.nom === "Item 2") {
