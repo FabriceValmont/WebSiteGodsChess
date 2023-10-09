@@ -15,7 +15,7 @@ const BOO = Black_Ops_One({
 
 const Item = () => {
 
-  const dataItem = useFetch('http://localhost:3000/produits')
+  const dataItem = useFetch('http://localhost:3000/products')
 
   const cardsItems= dataItem.map(item => {
       return (

@@ -14,7 +14,7 @@ app.use(cors({
 
 let dataSelectionGods = []
 let dataGods = []
-let dataProduits = []
+let dataProducts = []
 
 app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analyser les données JSON
 // app.options('*', cors()); 
@@ -36,8 +36,8 @@ app.get("/Gods", (req, res) => {
     res.send(dataGods)
 })
 
-app.get("/produits", (req, res) => {
-    res.send(dataProduits)
+app.get("/products", (req, res) => {
+    res.send(dataProducts)
 })
 
 
@@ -80,9 +80,9 @@ pool.query(`SELECT * FROM gods`, (err, res) => {
     }
 })
 
-pool.query(`SELECT * FROM produits`, (err, res) => {
+pool.query(`SELECT * FROM products`, (err, res) => {
     if(!err){
-        dataProduits = res.rows
+        dataProducts = res.rows
         //console.log(dataGods,"dataGods")
     }
     else{
@@ -94,7 +94,7 @@ pool.query(`SELECT * FROM produits`, (err, res) => {
 setTimeout(() => {
     // console.log(dataSelectionGods, "dataSelectionGods")
     // console.log(dataGods, "dataGods")
-    console.log(dataProduits, "dataProduits")
+    console.log(dataProducts, "dataProduits")
     console.log("Le délai de 1 seconde est écoulé.");
   }, 1000);
 

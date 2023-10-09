@@ -16,17 +16,17 @@ const BOO = Black_Ops_One({
 
 const Items1 = () => {
 
-    const dataItem = useFetch('http://localhost:3000/produits')
+    const dataItem = useFetch('http://localhost:3000/products')
 
     return (
         <div className={BOO.className}>
           <Header/>
           {dataItem[0] && (
           <ProfilItem
-          image_url={dataItem[0].image_url}
-          nom={dataItem[0].nom}
+          img={dataItem[0].img}
+          name={dataItem[0].name}
           description={dataItem[0].description}
-          prix={dataItem[0].prix}
+          price={dataItem[0].price}
           />)}
           <Footer/>
         </div>
