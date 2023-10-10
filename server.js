@@ -58,6 +58,23 @@ app.post("/inscription", (req, res) => {
     });
 });
 
+// // Route pour gérer la soumission du formulaire POST
+// app.post("/Store/NewItem", (req, res) => {
+//     // Récupérez les données du corps de la requête
+//     const { name, email, password } = req.body;
+  
+//     // Effectuez les opérations nécessaires dans la base de données ici
+//     // Exemple : insérer les données dans la base de données
+//     pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
+//       if (err) {
+//         console.error(err);
+//         res.status(500).json({ message: "Erreur lors de l'inscription" });
+//       } else {
+//         res.status(200).json({ message: "Inscription réussie" });
+//       }
+//     });
+// });
+
 pool.query(`SELECT * FROM selection_gods`, (err, res) => {
     if(!err){
         dataSelectionGods = res.rows
