@@ -4,6 +4,7 @@ const http = require('http').Server(app);
 const bodyParser = require('body-parser'); // Ajout du middleware body-parser
 const cors = require('cors'); // Importez le package cors
 const {Pool} = require("pg")
+require('dotenv').config();
 
 app.use(cors({
     origin: '*',
@@ -21,11 +22,11 @@ app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analys
 
 // Appel de la base de donnée 
 const pool = new Pool ({
-    host: "localhost",
-    user: "postgres",
-    port: 5432,
-    password: "1234",
-    database: "postgres"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
 })
 
 app.get("/selectionGods", (req, res) => {
