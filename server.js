@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const bodyParser = require('body-parser'); // Ajout du middleware body-parser
+const bcrypt = require('bcrypt');
 const cors = require('cors'); // Importez le package cors
 const {Pool} = require("pg")
 require('dotenv').config();
@@ -21,13 +22,21 @@ app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analys
 // app.options('*', cors()); 
 
 // Appel de la base de donnée 
-const pool = new Pool ({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    port: process.env.DB_PORT,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE
-})
+// const pool = new Pool({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     port: process.env.DB_PORT,
+//     password: process.env.DB_PASSWORD,
+//     database: process.env.DB_DATABASE
+// });
+
+const pool = new Pool({
+    host: "localhost",
+    user: "postgres",
+    port: 5434,
+    password: "1234",
+    database: "postgres"
+});
 
 app.get("/selectionGods", (req, res) => {
     res.send(dataSelectionGods)
@@ -46,16 +55,31 @@ app.get("/products", (req, res) => {
 app.post("/inscription", (req, res) => {
     // Récupérez les données du corps de la requête
     const { name, email, password } = req.body;
-  
-    // Effectuez les opérations nécessaires dans la base de données ici
-    // Exemple : insérer les données dans la base de données
-    pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ message: "Erreur lors de l'inscription" });
-      } else {
-        res.status(200).json({ message: "Inscription réussie" });
-      }
+
+    // Vérifiez si les champs sont vides ou nuls
+    if (!name || !email || !password) {
+        return res.status(400).json({ message: "Tous les champs doivent être renseignés" });
+    }
+
+    // Générez un sel pour le hachage (plus le nombre de tours, plus c'est sécurisé mais plus c'est lent)
+    const saltRounds = 10;
+
+    // Utilisez bcrypt pour hacher le mot de passe
+    bcrypt.hash(password, saltRounds, (err, hash) => {
+        if (err) {
+            console.error(err);
+            res.status(500).json({ message: "Erreur lors du hachage du mot de passe" });
+        } else {
+            // Maintenant, "hash" contient le mot de passe haché, vous pouvez l'insérer dans la base de données
+            pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, hash], (err, result) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).json({ message: "Erreur lors de l'inscription" });
+                } else {
+                    res.status(200).json({ message: "Inscription réussie" });
+                }
+            });
+        }
     });
 });
 
