@@ -83,6 +83,44 @@ app.post("/inscription", (req, res) => {
     });
 });
 
+app.post("/connexion", (req, res) => {
+    // Récupérez les données du corps de la requête
+    const { email, password } = req.body;
+
+    // Vérifiez si les champs sont vides ou nuls
+    if (!email || !password) {
+        return res.status(400).json({ message: "Tous les champs doivent être renseignés" });
+    }
+
+    // Recherchez l'utilisateur dans la base de données en utilisant l'e-mail
+    pool.query('SELECT email, password FROM users WHERE email = $1', [email], (err, result) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ message: "Erreur lors de la connexion" });
+        }
+        if (result.rows.length === 0) {
+            // L'utilisateur n'existe pas
+            return res.status(401).json({ message: "Identifiants incorrects" });
+        }
+        const hashedPassword = result.rows[0].password;
+
+        // Comparez le mot de passe soumis avec le mot de passe haché enregistré dans la base de données
+        bcrypt.compare(password, hashedPassword, (compareErr, isMatch) => {
+            if (compareErr) {
+                console.error(compareErr);
+                return res.status(500).json({ message: "Erreur lors de la connexion" });
+            }
+            if (isMatch) {
+                // Les mots de passe correspondent, l'utilisateur est authentifié
+                res.status(200).json({ message: "Connexion réussie" });
+            } else {
+                // Les mots de passe ne correspondent pas
+                res.status(401).json({ message: "Identifiants incorrects" });
+            }
+        });
+    });
+});
+
 pool.query(`SELECT * FROM selection_gods`, (err, res) => {
     if(!err){
         dataSelectionGods = res.rows
