@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const app = express();
 const http = require('http').Server(app);
 const bodyParser = require('body-parser'); // Ajout du middleware body-parser
@@ -19,7 +21,7 @@ let dataGods = []
 let dataProducts = []
 
 app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analyser les données JSON
-// app.options('*', cors()); 
+app.options('*', cors()); 
 
 // Appel de la base de donnée 
 // const pool = new Pool({
@@ -50,6 +52,29 @@ app.get("/products", (req, res) => {
     res.send(dataProducts)
 })
 
+// Configuration de Multer pour gérer les téléchargements de fichiers
+const storage = multer.diskStorage({
+    destination: './uploads/',
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    },
+  });
+  
+  const upload = multer({ storage });
+  
+  app.post('/Store/NewItem', upload.single('image'), async (req, res) => {
+    try {
+      const { itemName, description, price } = req.body;
+      const image = req.file.filename;
+      
+      const newItem = await pool.query('INSERT INTO products (name, price, description, img) VALUES ($1, $2, $3, $4) RETURNING *', [itemName, price, description, image]);
+      
+      res.json(newItem.rows[0]);
+    } catch (error) {
+      console.error('Erreur lors de l\'insertion de l\'item : ', error);
+      res.status(500).json({ error: 'Erreur serveur lors de l\'insertion de l\'item' });
+    }
+  });
 
 // Route pour gérer la soumission du formulaire POST
 app.post("/inscription", (req, res) => {
