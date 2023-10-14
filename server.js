@@ -1,4 +1,6 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const app = express();
 const http = require('http').Server(app);
 const bodyParser = require('body-parser'); // Ajout du middleware body-parser
@@ -17,7 +19,7 @@ let dataGods = []
 let dataProducts = []
 
 app.use(bodyParser.json()); // Utilisation du middleware body-parser pour analyser les données JSON
-// app.options('*', cors()); 
+app.options('*', cors()); 
 
 // Appel de la base de donnée 
 const pool = new Pool ({
@@ -40,6 +42,29 @@ app.get("/products", (req, res) => {
     res.send(dataProducts)
 })
 
+// Configuration de Multer pour gérer les téléchargements de fichiers
+const storage = multer.diskStorage({
+    destination: './uploads/',
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    },
+  });
+  
+  const upload = multer({ storage });
+  
+  app.post('/Store/NewItem', upload.single('image'), async (req, res) => {
+    try {
+      const { itemName, description, price } = req.body;
+      const image = req.file.filename;
+      
+      const newItem = await pool.query('INSERT INTO products (name, price, description, img) VALUES ($1, $2, $3, $4) RETURNING *', [itemName, price, description, image]);
+      
+      res.json(newItem.rows[0]);
+    } catch (error) {
+      console.error('Erreur lors de l\'insertion de l\'item : ', error);
+      res.status(500).json({ error: 'Erreur serveur lors de l\'insertion de l\'item' });
+    }
+  });
 
 // Route pour gérer la soumission du formulaire POST
 app.post("/inscription", (req, res) => {
@@ -57,23 +82,6 @@ app.post("/inscription", (req, res) => {
       }
     });
 });
-
-// // Route pour gérer la soumission du formulaire POST
-// app.post("/Store/NewItem", (req, res) => {
-//     // Récupérez les données du corps de la requête
-//     const { name, email, password } = req.body;
-  
-//     // Effectuez les opérations nécessaires dans la base de données ici
-//     // Exemple : insérer les données dans la base de données
-//     pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password], (err, result) => {
-//       if (err) {
-//         console.error(err);
-//         res.status(500).json({ message: "Erreur lors de l'inscription" });
-//       } else {
-//         res.status(200).json({ message: "Inscription réussie" });
-//       }
-//     });
-// });
 
 pool.query(`SELECT * FROM selection_gods`, (err, res) => {
     if(!err){
