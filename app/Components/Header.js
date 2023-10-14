@@ -1,10 +1,11 @@
 "use client"
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 
 const Header = () => {
+  const [isLoggedIn, setInLoggedIn] = useState(false)
   
   return (
     <header className="bg-black sticky top-0 z-10">
@@ -31,9 +32,15 @@ const Header = () => {
             <li className="mr-4 text-white text-[14px]">
             <Link href="/SignIn">Inscription</Link>
             </li>
-              <Link href="/Login">           
-              <Image className="justify-end" src="/header/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
-              </Link>
+            {isLoggedIn ? (
+                <Link href="/Profil"> {/* Lien vers /Profil lorsque l'utilisateur est connecté */}
+                  <Image className="justify-end" src="/header/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
+                </Link>
+              ) : (
+                <Link href="/Login"> {/* Lien vers /Login lorsque l'utilisateur n'est pas connecté */}
+                  <Image className="justify-end" src="/header/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
+                </Link>
+            )}
             </div>
           </ul>
         </nav>
