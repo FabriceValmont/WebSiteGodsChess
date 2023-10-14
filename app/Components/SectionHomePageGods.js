@@ -3,7 +3,7 @@ import React from 'react';
 
 const SectionHomePageGods = () => {
   return (
-    <div className="w-full h-screen flex flex-col bg-cover bg-center relative" style={{ backgroundImage: 'url(/homePage/Panorama_des_Dieux_IA.png)' }}>
+    <div className="w-full h-screen flex flex-col bg-cover bg-center relative" style={{ backgroundImage: 'url(/homePage/Panorama_des_Dieux_IA_V2.png)' }}>
       <p className="text-7xl text-black mx-auto my-14 font-outline-2-white"></p> {/* Remettre le titre "Dieux" si cela ne convient pas.
       Je laisse la balise p avec le style car sinon cela remonte la phrase en dessous.*/}
       <div className="text-6xl text-white flex flex-col">
