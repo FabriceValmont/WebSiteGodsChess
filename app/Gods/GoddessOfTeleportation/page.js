@@ -1,25 +1,15 @@
 "use client"
 
 import React from 'react'
-import Header from '../../Components/Header';
-import Footer from '../../Components/Footer';
 import ProfilGod from '../../Components/ProfilGod';
-import { Black_Ops_One} from "@next/font/google"
 import useFetch from '@/app/CustomHooks/useFetch';
-
-const BOO = Black_Ops_One({
-    subsets: ['latin'],
-    weight: ['400']
-  
-  })
 
 const GoddessOfTeleportation = () => {
 
   const dataProfilGods = useFetch('http://localhost:3000/gods')
 
     return (
-        <div className={BOO.className}>
-          <Header/>
+        <div>
           {dataProfilGods[0] && (
           <ProfilGod
             name={dataProfilGods[0].name}
@@ -46,7 +36,6 @@ const GoddessOfTeleportation = () => {
             gif_power_queen={dataProfilGods[0].gif_power_queen}
             gif_power_king={dataProfilGods[0].gif_power_king}
             />)}
-          <Footer/>
         </div>
       );
     }

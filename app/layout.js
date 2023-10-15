@@ -1,5 +1,14 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
+import { Black_Ops_One} from "@next/font/google"
+import Header from './Components/Header'
+import Footer from './Components/Footer'
+
+const BOO = Black_Ops_One({
+  subsets: ['latin'],
+  weight: ['400']
+
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,8 +19,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" >
+      <body className={BOO.className}> {/*className={inter.className} */}
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

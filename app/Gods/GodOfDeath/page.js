@@ -1,23 +1,12 @@
 import React from 'react'
 import dataProfilGods from '@/dataProfilGods';
-import Header from '../../Components/Header';
-import Footer from '../../Components/Footer';
 import ProfilGod from '@/app/Components/ProfilGod';
-import { Black_Ops_One} from "@next/font/google"
-
-const BOO = Black_Ops_One({
-    subsets: ['latin'],
-    weight: ['400']
-  
-  })
-
 
 const GodOfDeath = () => {
 
     const data = dataProfilGods
     return (
-        <div className={BOO.className}>
-          <Header/>
+        <div>
           <ProfilGod
             name={data[1].name}
             sprite_god={data[1].sprite_god}
@@ -43,7 +32,6 @@ const GodOfDeath = () => {
             gif_power_queen={data[1].gif_power_queen}
             gif_power_king={data[1].gif_power_king}
             />
-          <Footer/>
         </div>
       );
     }
