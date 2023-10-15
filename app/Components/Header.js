@@ -7,7 +7,6 @@ import { useSession } from '../CustomHooks/SessionContext';
 
 const Header = () => {
   const { isAuthenticated } = useSession();
-  console.log(isAuthenticated)
   
   return (
     <header className="bg-black sticky top-0 z-10">

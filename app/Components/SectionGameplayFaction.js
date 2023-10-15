@@ -5,7 +5,7 @@ const SectionGameplayFaction = () => {
   return (
     <div className="flex">
       <div className="m-4">
-        <Image className="" src="/gameplay/Plateau_d'échec_new_faction.png" width={850} height={850}/>
+        <Image className="" src="/gameplay/Plateau_d'échec_new_faction.png" width={800} height={800}/>
       </div>
       <div className="text-center flex flex-col justify-center align-center items-center">
         <h2 className="p-4 text-5xl font-bold">Faction</h2>
