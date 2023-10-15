@@ -1,10 +1,12 @@
 "use client"
 
 import React, { useState } from 'react';
+import { useSession } from '../CustomHooks/SessionContext';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { login } = useSession();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -22,7 +24,10 @@ const Login = () => {
             if (response.ok) {
                 // La connexion a réussi, redirigez l'utilisateur vers son profil ou effectuez toute autre action nécessaire
                 // Par exemple, vous pouvez utiliser react-router-dom pour la navigation
-                window.location.href = '/Profil';
+                login()
+                //window.location.href = '/'; En redirigeant cela fait relancer tout le site web et remet la valeur du useContext à false
+                // car la ressource à fetch: Error: NetworkError when attempting to fetch resource.
+                //Pour l'instant ne pas redirigé permet de garder la valeur à true.
             } else {
                 // La connexion a échoué, affichez un message d'erreur à l'utilisateur
                 console.error('Échec de la connexion');

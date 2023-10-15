@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Black_Ops_One} from "@next/font/google"
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+import { SessionProvider } from './CustomHooks/SessionContext'
 
 const BOO = Black_Ops_One({
   subsets: ['latin'],
@@ -21,9 +22,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" >
       <body className={BOO.className}> {/*className={inter.className} */}
+      <SessionProvider>
         <Header />
         {children}
         <Footer />
+      </SessionProvider>
       </body>
     </html>
   )

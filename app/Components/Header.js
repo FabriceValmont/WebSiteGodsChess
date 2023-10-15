@@ -1,11 +1,13 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
+import { useSession } from '../CustomHooks/SessionContext';
 
 const Header = () => {
-  const [isLoggedIn, setInLoggedIn] = useState(false)
+  const { isAuthenticated } = useSession();
+  console.log(isAuthenticated)
   
   return (
     <header className="bg-black sticky top-0 z-10">
@@ -32,7 +34,7 @@ const Header = () => {
             <li className="mr-4 text-white text-[14px]">
             <Link href="/SignIn">Inscription</Link>
             </li>
-            {isLoggedIn ? (
+            {isAuthenticated ? (
                 <Link href="/Profil"> {/* Lien vers /Profil lorsque l'utilisateur est connecté */}
                   <Image className="justify-end" src="/header/Image_compte_T.png" alt="Compte connexion" width={100} height={50} />
                 </Link>
