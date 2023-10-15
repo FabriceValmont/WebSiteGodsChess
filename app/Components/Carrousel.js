@@ -44,13 +44,13 @@ class Carrousel extends Component {
           ))}
         </div>
         <button
-          className="absolute bottom-[1rem] right-1/2 transform -translate-x-1/2 text-white"
+          className="absolute bottom-[1rem] right-1/2 transform -translate-x-1/2 text-white text-2xl"
           onClick={this.prevSlide}
         >
           Précédent
         </button>
         <button
-          className="absolute bottom-[1rem] left-1/2 transform translate-x-1/2 text-white"
+          className="absolute bottom-[1rem] left-1/2 transform translate-x-1/2 text-white text-2xl"
           onClick={this.nextSlide}
         >
           Suivant
