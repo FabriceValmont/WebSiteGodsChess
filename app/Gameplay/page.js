@@ -11,7 +11,7 @@ const Gameplay = () => {
             <SectionGameplayRules/>
             <SectionGameplayClan/>
             <SectionGameplayFaction/>
-            <h1 className="bg-black text-center text-white text-4xl"> Règles spécifique de GodChess</h1>
+            <h1 className="bg-black text-center text-white text-4xl pt-4"> Règles spécifiques de GodChess</h1>
             <SectionGameplayRulesGodsChess/>
           </main>
         </div>

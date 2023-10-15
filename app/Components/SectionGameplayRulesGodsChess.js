@@ -63,13 +63,13 @@ const SectionGameplayClan = () => {
     </div>
   </div>,
 
-<div className="bg-black flex text-white w-full">
+<div className="bg-black flex justify-center align-center items-center text-white w-full">
 <div className="m-8 text-center flex flex-col justify-center align-center items-center">
   <h2 className="p-4 text-3xl font-bold">Pas d’effet contre le roi</h2>
   <p>Le roi est invulnérable à tous les types d'effets présents dans le jeu
   </p>
 </div>
-<div className="m-8 translate-x-[22rem]">
+<div className="m-8 translate-x-[10rem]">
   <img src="/gameplay/Effet_Roi.png" alt="Effet Roi" width={470}/>
 </div>
 </div>,
