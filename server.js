@@ -179,12 +179,33 @@ pool.query(`SELECT * FROM products`, (err, res) => {
     }
 })
 
+async function mettreAJourDonnees() {
+    try {
+        // Exécutez les requêtes pour récupérer les données de la base de données
+        const selectionGodsQuery = await pool.query(`SELECT * FROM selection_gods`);
+        const godsQuery = await pool.query(`SELECT * FROM gods`);
+        const productsQuery = await pool.query(`SELECT * FROM products`);
+        
+        // Mettez à jour les données
+        dataSelectionGods = selectionGodsQuery.rows;
+        dataGods = godsQuery.rows;
+        dataProducts = productsQuery.rows;
+        
+        console.log("Données mises à jour.");
+    } catch (error) {
+        console.error("Erreur lors de la mise à jour des données :", error.message);
+    }
+}
+
+
 setTimeout(() => {
     // console.log(dataSelectionGods, "dataSelectionGods")
     // console.log(dataGods, "dataGods")
     console.log(dataProducts, "dataProduits")
     console.log("Le délai de 1 seconde est écoulé.");
   }, 1000);
+
+setInterval(mettreAJourDonnees, 60000);
 
 // Lancer le serveur
 http.listen(3000, () => {
