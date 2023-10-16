@@ -17,7 +17,8 @@ function ItemForm() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleUpload = async () => {
+  const handleUpload = async (event) => {
+    event.preventDefault()
     const { file, itemName, description, price } = formData;
 
     const formDataToUpload = new FormData();
@@ -48,58 +49,60 @@ function ItemForm() {
         <h1 className="text-2xl font-semibold text-center text-gray-700">
           Ajouter un objet
         </h1>
-          <div className="mb-2">
-            <label htmlFor="ItemName" className="block text-sm font-semibold text-gray-800">
-              Nom
-            </label>
-            <input
-              type="text"
-              name="itemName"
-              value={formData.itemName}
-              onChange={handleInputChange}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <div className="mb-2">
-            <label htmlFor="price" className="block text-sm font-semibold text-gray-800">
-              prix
-            </label>
-            <input
-              type="number"
-              name="price"
-              value={formData.price}
-              onChange={handleInputChange}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <div className="mb-2">
-            <label htmlFor="image" className="block text-sm font-semibold text-gray-800">
-              image
-            </label>
-            <input
-              type="file"
-              name="image"
-              onChange={handleFileChange}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <div className="mb-2">
-            <label htmlFor="description" className="block text-sm font-semibold text-gray-800">
-              description
-            </label>
-            <textarea
-              type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleInputChange}
-              className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <div className="mt-6">
-            <button className="w-full px-4 py-2 text-white bg-gray-800 rounded-lg hover:bg-gray-900 focus:outline-none focus:bg-gray-600" onClick={handleUpload}>
-              Ajouter
-            </button>
-          </div>
+          <form encType="multipart/form-data" onSubmit={handleUpload}>
+            <div className="mb-2">
+              <label htmlFor="ItemName" className="block text-sm font-semibold text-gray-800">
+                Nom
+              </label>
+              <input
+                type="text"
+                name="itemName"
+                value={formData.itemName}
+                onChange={handleInputChange}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+            <div className="mb-2">
+              <label htmlFor="price" className="block text-sm font-semibold text-gray-800">
+                Prix
+              </label>
+              <input
+                type="number"
+                name="price"
+                value={formData.price}
+                onChange={handleInputChange}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+            <div className="mb-2">
+              <label htmlFor="image" className="block text-sm font-semibold text-gray-800">
+                image
+              </label>
+              <input
+                type="file"
+                name="image"
+                onChange={handleFileChange}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+            <div className="mb-2">
+              <label htmlFor="description" className="block text-sm font-semibold text-gray-800">
+                description
+              </label>
+              <textarea
+                type="text"
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              />
+            </div>
+            <div className="mt-6">
+              <button className="w-full px-4 py-2 text-white bg-gray-800 rounded-lg hover:bg-gray-900 focus:outline-none focus:bg-gray-600">
+                Ajouter
+              </button>
+            </div>
+          </form>  
       </div>
     </div>
   );
