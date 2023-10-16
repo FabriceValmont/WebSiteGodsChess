@@ -35,7 +35,7 @@ app.options('*', cors());
 const pool = new Pool({
     host: "localhost",
     user: "postgres",
-    port: 5434,
+    port: 5432,
     password: "1234",
     database: "postgres"
 });
