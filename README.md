@@ -7,18 +7,12 @@ Développement Front-End : React, Next.
 Développement Back-End : Node, Express, PostgreSQL.
 
 Il offre les fonctionnalités suivantes :<br/>
--Inscription/Connexion utilisateur 
-
--Création de compte administrateur
-
--Utilisations de hooks
-
--Formulaire permettant l'ajout d'un objet à la vente
-
--Système de panier
-
--Système de recherche et de filtre
-
--Objet relié à une base de donnée SQL
+-Inscription/Connexion utilisateur<br/>
+-Création de compte administrateur<br/>
+-Utilisations de hooks<br/>
+-Formulaire permettant l'ajout d'un objet à la vente<br/>
+-Système de panier<br/>
+-Système de recherche et de filtre<br/>
+-Objet relié à une base de donnée SQL<br/>
 
 # Image du Projet
