@@ -6,8 +6,7 @@ Développement Front-End : React, Next.
 
 Développement Back-End : Node, Express, PostgreSQL.
 
-Il offre les fonctionnalités suivantes :
-
+Il offre les fonctionnalités suivantes :<br/>
 -Inscription/Connexion utilisateur 
 
 -Création de compte administrateur
