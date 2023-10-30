@@ -6,6 +6,7 @@ import useFetch from '../CustomHooks/useFetch';
 import { useSession } from '../CustomHooks/SessionContext';
 import Link from 'next/link';
 import PriceFilter from '../Components/PriceFilter';
+import SearchBar from '../Components/SearchBar';
 
 const Item = () => {
   const originalData = useFetch('http://localhost:3000/products');
@@ -29,8 +30,14 @@ const Item = () => {
     setIsFilterApplied(true);
   };
 
+  const handleSearch = (query) => {
+    const results = originalData.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+    
+    setFilteredData(results);
+    setIsFilterApplied(true);
+  };
+
   useEffect(() => {
-    // Mettez à jour filteredData avec les données d'origine chaque fois que originalData change
     setFilteredData(originalData);
     setIsFilterApplied(false);
   }, [originalData]);
@@ -44,6 +51,7 @@ const Item = () => {
       <div className='flex flex-col items-center'>
         <h1 className="flex m-2 text-5xl font-semibold">Magasin</h1>
         <p className="flex m-2 text-2xl">Filtre</p>
+        <SearchBar onSearch={handleSearch}/>
         <PriceFilter onFilterChange={handleFilterChange} />
         {isAuthenticated ? (
           <Link href="/Store/NewItem">
